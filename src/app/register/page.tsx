@@ -1,0 +1,112 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function Register() {
+  return (
+    <main className="min-h-screen grid lg:grid-cols-2 bg-white dark:bg-slate-950 font-sans transition-colors duration-300">
+      {/* Visual Side */}
+      <div className="relative hidden lg:flex items-center justify-center p-12 bg-slate-900 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Students on campus"
+            fill
+            className="object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/90 to-[var(--primary-hover)]/95 mix-blend-multiply" />
+        </div>
+        
+        <div className="relative z-10 text-white max-w-lg">
+          <Link href="/" className="inline-flex items-center gap-3 mb-12 hover:opacity-80 transition-opacity group">
+            <div className="w-12 h-12 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105 shadow-xl">
+              <Image src="/logo.png" alt="Logo" width={40} height={40} className="object-contain" />
+            </div>
+            <span className="font-extrabold text-2xl tracking-tight leading-tight">LifeSkills Institute</span>
+          </Link>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight tracking-tight">Start Your Journey Today.</h1>
+          <p className="text-lg text-slate-300 leading-relaxed font-medium">
+            Join the Re-Schooling Academy or explore our premium Technical High School vocational programs designed to equip you with real-world excellence.
+          </p>
+          
+          <div className="mt-12 flex items-center gap-4">
+            <div className="flex -space-x-3">
+              <div className="w-10 h-10 rounded-full border-2 border-[var(--primary)] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" fill alt="Student" className="object-cover" /></div>
+              <div className="w-10 h-10 rounded-full border-2 border-[var(--primary)] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" fill alt="Student" className="object-cover" /></div>
+              <div className="w-10 h-10 rounded-full border-2 border-[var(--primary)] overflow-hidden relative bg-white flex items-center justify-center"><span className="text-xs font-bold text-[var(--primary)]">+2k</span></div>
+            </div>
+            <div className="text-sm font-semibold tracking-wide text-blue-100">Join 2,000+ Students</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Form Side */}
+      <div className="flex items-center justify-center p-6 sm:p-12 relative overflow-hidden">
+        {/* Subtle background blobs */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[var(--primary)] opacity-[0.03] dark:opacity-10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-500 opacity-[0.03] dark:opacity-10 rounded-full blur-[100px]" />
+        
+        <div className="w-full max-w-md relative z-10">
+          <div className="lg:hidden mb-10 flex justify-center">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="w-12 h-12 bg-white rounded-lg p-1.5 border border-slate-200 dark:border-slate-800 shadow-md">
+                <Image src="/logo.png" alt="Logo" width={40} height={40} className="object-contain" />
+              </div>
+              <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">LifeSkills</span>
+            </Link>
+          </div>
+
+          <div className="mb-10 text-center lg:text-left flex flex-col justify-center animate-fade-in-up">
+            <Link href="/" className="hidden lg:inline-flex items-center gap-3 mb-10 group opacity-70 hover:opacity-100 transition-opacity">
+              <svg className="w-5 h-5 text-slate-800 dark:text-slate-200 transform transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-widest">Back</span>
+            </Link>
+
+            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Create Account</h2>
+            <p className="text-slate-500 dark:text-slate-400 font-medium">Enter your details to enroll</p>
+          </div>
+
+          <form className="space-y-5 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="space-y-1.5">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Full Name</label>
+              <input type="text" placeholder="John Doe" className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:ring-4 focus:ring-[var(--primary)]/10 focus:border-[var(--primary)] outline-none transition-all placeholder:text-slate-400" />
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email Address</label>
+              <input type="email" placeholder="john@example.com" className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:ring-4 focus:ring-[var(--primary)]/10 focus:border-[var(--primary)] outline-none transition-all placeholder:text-slate-400" />
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Phone Number</label>
+              <input type="tel" placeholder="+1 (555) 000-0000" className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:ring-4 focus:ring-[var(--primary)]/10 focus:border-[var(--primary)] outline-none transition-all placeholder:text-slate-400" />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Password</label>
+                <input type="password" placeholder="••••••••" className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:ring-4 focus:ring-[var(--primary)]/10 focus:border-[var(--primary)] outline-none transition-all placeholder:text-slate-400" />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Confirm Password</label>
+                <input type="password" placeholder="••••••••" className="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 focus:ring-4 focus:ring-[var(--primary)]/10 focus:border-[var(--primary)] outline-none transition-all placeholder:text-slate-400" />
+              </div>
+            </div>
+
+            <button type="button" className="w-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white font-bold py-4 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-[var(--primary)]/30 hover:-translate-y-0.5 mt-8 tracking-wide">
+              Complete Registration
+            </button>
+          </form>
+
+          <p className="mt-10 text-center text-sm text-slate-600 dark:text-slate-400 font-medium animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Already have an account?{' '}
+            <Link href="/login" className="text-[var(--primary)] dark:text-[var(--primary-light)] font-bold hover:underline transition-all ml-1">
+              Log in here
+            </Link>
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}
